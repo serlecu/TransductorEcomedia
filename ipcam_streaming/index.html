@@ -1,0 +1,82 @@
+<!DOCTYPE HTML>
+
+<html>
+
+<head>
+<title>IP Camera Stream</title>
+<meta content=en http-equiv=Content-Language>
+<meta content="text/html; charset=utf-8" http-equiv=Content-Type>
+
+<script src="js/ffmpeg.js" type="text/javascript" ></script>
+
+<script type="text/javascript">
+
+	/* IMPORTANT!!! IPCAM LOCAl IP, check your intranet and change it  */
+	var ip = "192.168.0.35";
+
+	var webport = 80;
+
+	<!--
+	var lancode="5";
+	var videomode="101";
+	var vinorm="P";
+	var profile="3";
+	var maxchn="2";
+	var wdrmode="0";
+	var bps_1="1536";
+	var fps_1="25";
+	var gop_1="100";
+	var brmode_1="1";
+	var imagegrade_1="1";
+	var width_1="2560";
+	var height_1="1920";
+	var bps_2="512";
+	var fps_2="15";
+	var gop_2="60";
+	var brmode_2="1";
+	var imagegrade_2="1";
+	var width_2="1440";
+	var height_2="1080";
+	var name0="admin";
+	var password0="";
+	var authLevel0="15";
+	var audioflag="1";
+	var rtmpport="1935";
+	var httpport="80";
+
+	var w;
+	var h;
+
+	var player = null;
+
+	function load1(){
+
+		w=parseInt(width_2);
+		h=parseInt(height_2);
+
+		player = new HxPlayer();
+		var canvas = document.getElementById("video_cavas");
+
+		self.player.init({canvas:canvas,width:1440,height:1080});
+
+		self.player.playvideo(ip,webport,'11',name0,password0);
+	}
+
+</script>
+
+</head>
+<body onLoad="load1()" style="background-color:#000">
+
+	<div id="ipcam_display" style="background-color:#000;text-align: center;">
+		<script type=text/JavaScript>
+			w=parseInt(width_2);
+			h=parseInt(height_2);
+
+			document.open();
+			document.write('<div><canvas id="video_cavas" width=' + w + ' height=' + h + '></canvas></div>');
+			document.close();
+		</script>
+	</div>
+
+</body>
+</html>

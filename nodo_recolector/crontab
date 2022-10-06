@@ -1,0 +1,11 @@
+# startup script
+@reboot sudo -u laboluz sh /home/laboluz/Scripts/startup.sh 2>&1
+
+# check reversal ssh tunnel every 10 minutes
+*/10 * * * * sudo -u laboluz sh /home/laboluz/Scripts/init_revssh_tunnel.sh > /home/laboluz/Scripts/tunnel.log 2>&1
+
+# ping station status every 25 minutes
+*/25 * * * * sudo -u laboluz python /home/laboluz/Scripts/pingStatus.py
+
+# upload last station data every hour at minute 7
+7 */1 * * * sudo -u laboluz python /home/laboluz/Scripts/uploadMarjalData.py > /home/laboluz/Scripts/upload.log 2>&1
